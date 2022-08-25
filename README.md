@@ -31,12 +31,8 @@ python code/main.py
 
 ## Attributions
 
-* This project, as its originator, is published under the Creative Commons Zero
+* This project is published under the Creative Commons Zero
 (CC0) license. You are free to use this code for any project you like.
-* This project is based on the [video tutorial](https://youtu.be/QU1pPzEGrqw)
-by Clear Code.
-* Art and sound assets were created by Pixel-Boy and AAA and published under
-the CC0 license. You can find them [here](https://pixel-boy.itch.io/ninja-adventure-asset-pack).
 
 <p align="center">
     <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode"><img src="https://licensebuttons.net/p/zero/1.0/88x31.png"></a>
