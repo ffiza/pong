@@ -1,6 +1,8 @@
 import pygame
 import sys
 from settings import Settings
+from background import Background
+from player import Player
 
 
 class Game:
@@ -18,8 +20,19 @@ class Game:
         self.clock = pygame.time.Clock()
 
         self.screen = pygame.display.set_mode((self.settings.screen_width,
-                                               self.settings.screen_height))
+                                               self.settings.screen_height),
+                                              pygame.FULLSCREEN)
         pygame.display.set_caption(self.settings.window_name)
+
+        self.background = Background(self)
+        self.p1 = Player(x=self.settings.player_offset,
+                         y=self.screen.get_size()[1]//2,
+                         game=self)
+        self.p2 = Player(x=self.screen.get_size()[0]
+                           - self.settings.player_offset
+                           - self.settings.player_width,
+                         y=self.screen.get_size()[1]//2,
+                         game=self)
 
     def run(self) -> None:
         """
@@ -41,11 +54,16 @@ class Game:
             elif event.type == pygame.KEYDOWN:
                 self._check_keydown_events(event)
 
+        self._check_movement_events()
+
     def _update_screen(self) -> None:
         """
         Update elements on the screen and flip to the new screen.
         """
-        self.screen.fill(self.settings.bg_color)
+        self.background.blit_bg()  # Background should be draw first
+        self.p1.draw_player()
+        self.p2.draw_player()
+
         pygame.display.flip()
 
     def _quit_game(self) -> None:
@@ -54,6 +72,21 @@ class Game:
         """
         pygame.quit()
         sys.exit()
+
+    def _check_movement_events(self) -> None:
+        """
+        This method checks the inputs for the movement of the players.
+        """
+        keys = pygame.key.get_pressed()
+
+        if keys[pygame.K_q]:
+            self.p1.move_up()
+        if keys[pygame.K_a]:
+            self.p1.move_down()
+        if keys[pygame.K_UP]:
+            self.p2.move_up()
+        if keys[pygame.K_DOWN]:
+            self.p2.move_down()
 
     def _check_keydown_events(self, event: pygame.event.Event) -> None:
         """
