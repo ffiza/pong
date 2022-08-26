@@ -33,6 +33,9 @@ python code/main.py
 
 * This project is published under the Creative Commons Zero
 (CC0) license. You are free to use this code for any project you like.
+* Backgrounds are from the
+[amazing space image generator](https://deep-fold.itch.io/space-background-generator)
+by Deep-Fold.
 
 <p align="center">
     <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode"><img src="https://licensebuttons.net/p/zero/1.0/88x31.png"></a>
