@@ -7,14 +7,12 @@ class Background(pygame.sprite.Sprite):
     """
     A class to manage the background images of the game.
     """
-    def __init__(self, game) -> None:
+    def __init__(self) -> None:
         """
         Constructor for the Background class.
-
-        :param game: An instance of the Game class defined in main.py.
         """
         super().__init__()
-        self.screen = game.screen
+        self.screen = pygame.display.get_surface()
         self.settings = Settings()
 
         bg_idx = random.randint(0, 4)

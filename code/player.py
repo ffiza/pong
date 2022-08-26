@@ -6,16 +6,15 @@ class Player(pygame.sprite.Sprite):
     """
     A class to manage the player(s).
     """
-    def __init__(self, x: int, y: int, game):
+    def __init__(self, x: int, y: int):
         """
         Constructor for the Player class.
 
         :param x: The x position of the player at creation.
         :param y: The y position of the player at creation.
-        :param game: An instance of the Game class defined in main.py.
         """
         super().__init__()
-        self.screen = game.screen
+        self.screen = pygame.display.get_surface()
         self.settings = Settings()
 
         self.player_rect = pygame.rect.Rect(0, 0,

@@ -24,15 +24,13 @@ class Game:
                                               pygame.FULLSCREEN)
         pygame.display.set_caption(self.settings.window_name)
 
-        self.background = Background(self)
+        self.background = Background()
         self.p1 = Player(x=self.settings.player_offset,
-                         y=self.screen.get_size()[1]//2,
-                         game=self)
+                         y=self.screen.get_size()[1]//2)
         self.p2 = Player(x=self.screen.get_size()[0]
                            - self.settings.player_offset
                            - self.settings.player_width,
-                         y=self.screen.get_size()[1]//2,
-                         game=self)
+                         y=self.screen.get_size()[1]//2)
 
     def run(self) -> None:
         """

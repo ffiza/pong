@@ -8,6 +8,7 @@ font = pygame.font.Font(None, 30)
 def debug(info: str, x: int = 10, y: int = 10) -> None:
     """
     Prints custom information on the game screen.
+
     :param info: String with info to be printed in screen.
     :param x: x position of the text rectangle.
     :param y: y position of the text rectangle.
