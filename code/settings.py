@@ -1,3 +1,6 @@
+from pygame.math import Vector2
+
+
 class Settings:
     """
     A class to store all settings for Alien Invasion.
@@ -12,6 +15,8 @@ class Settings:
         self.screen_height = 234
         self.bg_color = 'black'
         self.window_name = 'Pong'
+        self.score_offset = Vector2(100, 25)
+        self.score_font_size = 60
 
         # Player settings
         self.player_speed = 4

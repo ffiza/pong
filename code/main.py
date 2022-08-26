@@ -4,6 +4,8 @@ from settings import Settings
 from background import Background
 from player import Player
 from ball import Ball
+from game_stats import GameStats
+from scoreboard import Scoreboard
 
 
 class Game:
@@ -18,14 +20,19 @@ class Game:
         pygame.init()
 
         self.settings = Settings()
-        self.clock = pygame.time.Clock()
 
-        self.screen = pygame.display.set_mode((self.settings.screen_width,
-                                               self.settings.screen_height),
-                                              pygame.FULLSCREEN)
+        # Window and background
+        self.screen = pygame.display.set_mode(
+            (self.settings.screen_width, self.settings.screen_height),
+            pygame.FULLSCREEN)
         pygame.display.set_caption(self.settings.window_name)
-
         self.background = Background()
+
+        self.clock = pygame.time.Clock()
+        self.scoreboard = Scoreboard()
+        self.stats = GameStats()
+
+        # Players and ball
         self.p1 = Player(x=self.settings.player_offset,
                          y=self.screen.get_size()[1]//2)
         self.p2 = Player(x=self.screen.get_size()[0]
@@ -56,6 +63,18 @@ class Game:
 
         self._check_movement_events()
 
+    def _check_score(self) -> None:
+        """
+        Check if the ball leaves the screen and update score.
+        """
+        if self.ball.rect.right >= self.screen.get_rect().right:
+            # Score for player 1
+            self.stats.scores[0] += 1
+            self.ball.reset()
+        if self.ball.rect.left <= self.screen.get_rect().left:
+            self.stats.scores[1] += 1
+            self.ball.reset()
+
     def _update_screen(self) -> None:
         """
         Update elements on the screen and flip to the new screen.
@@ -65,6 +84,8 @@ class Game:
         self.p2.draw_player()
         self.ball.draw_ball()
         self._check_collisions()
+        self._check_score()
+        self.scoreboard.draw(self.stats.scores)
 
         pygame.display.flip()
 

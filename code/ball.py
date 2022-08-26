@@ -37,6 +37,13 @@ class Ball(pygame.sprite.Sprite):
         """
         self.rect.center += self.speed * self.direction
 
+    def reset(self) -> None:
+        """
+        Reset the ball position and select new initial direction.
+        """
+        self.rect.center = self.screen.get_rect().center
+        self.direction = pygame.math.Vector2(random.choices([1, -1], k=2))
+
     def check_border_collisions(self) -> None:
         """
         Check is the ball collides with the screen borders and change direction.
