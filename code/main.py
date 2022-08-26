@@ -66,7 +66,8 @@ class Game:
 
         pygame.display.flip()
 
-    def _quit_game(self) -> None:
+    @staticmethod
+    def _quit_game() -> None:
         """
         This method quits the game.
         """
