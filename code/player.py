@@ -17,28 +17,28 @@ class Player(pygame.sprite.Sprite):
         self.screen = pygame.display.get_surface()
         self.settings = Settings()
 
-        self.player_rect = pygame.rect.Rect(0, 0,
-                                            self.settings.player_width,
-                                            self.settings.player_height)
-        self.player_rect.left = x
-        self.player_rect.centery = y
+        self.rect = pygame.rect.Rect(0, 0,
+                                     self.settings.player_width,
+                                     self.settings.player_height)
+        self.rect.left = x
+        self.rect.centery = y
 
     def draw_player(self) -> None:
         """
         Draw the player on the screen.
         """
-        pygame.draw.rect(self.screen, 'white', self.player_rect)
+        pygame.draw.rect(self.screen, 'white', self.rect)
 
     def move_up(self) -> None:
         """
         This method moves the player rect up.
         """
-        if self.player_rect.top > 0:
-            self.player_rect.y -= self.settings.player_speed
+        if self.rect.top > 0:
+            self.rect.y -= self.settings.player_speed
 
     def move_down(self) -> None:
         """
         This methods moves the player down.
         """
-        if self.player_rect.bottom < self.screen.get_rect().height:
-            self.player_rect.y += self.settings.player_speed
+        if self.rect.bottom < self.screen.get_rect().height:
+            self.rect.y += self.settings.player_speed

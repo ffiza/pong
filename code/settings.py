@@ -19,5 +19,9 @@ class Settings:
         self.player_height = 50
         self.player_offset = 20
 
+        # Ball settings
+        self.ball_speed = 2
+        self.ball_size = 6
+
         # Clock settings
         self.fps = 60

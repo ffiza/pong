@@ -3,6 +3,7 @@ import sys
 from settings import Settings
 from background import Background
 from player import Player
+from ball import Ball
 
 
 class Game:
@@ -31,6 +32,7 @@ class Game:
                            - self.settings.player_offset
                            - self.settings.player_width,
                          y=self.screen.get_size()[1]//2)
+        self.ball = Ball()
 
     def run(self) -> None:
         """
@@ -61,8 +63,20 @@ class Game:
         self.background.blit_bg()  # Background should be draw first
         self.p1.draw_player()
         self.p2.draw_player()
+        self.ball.draw_ball()
+        self._check_collisions()
 
         pygame.display.flip()
+
+    def _check_ball_player_collision(self) -> None:
+        """
+        Check if the ball collides with a player and change direction
+        accordingly.
+        """
+        has_collided = self.ball.rect.colliderect(self.p1.rect) \
+                       or self.ball.rect.colliderect(self.p2.rect)
+        if has_collided:
+            self.ball.direction.x *= -1
 
     @staticmethod
     def _quit_game() -> None:
@@ -71,6 +85,13 @@ class Game:
         """
         pygame.quit()
         sys.exit()
+
+    def _check_collisions(self) -> None:
+        """
+        Check collision for the ball.
+        """
+        self.ball.check_border_collisions()
+        self._check_ball_player_collision()
 
     def _check_movement_events(self) -> None:
         """
@@ -86,6 +107,8 @@ class Game:
             self.p2.move_up()
         if keys[pygame.K_DOWN]:
             self.p2.move_down()
+
+        self.ball.move_ball()
 
     def _check_keydown_events(self, event: pygame.event.Event) -> None:
         """
