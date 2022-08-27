@@ -1,6 +1,7 @@
 import pygame
 from settings import Settings
 import random
+import os
 
 
 class Background(pygame.sprite.Sprite):
@@ -15,9 +16,9 @@ class Background(pygame.sprite.Sprite):
         self.screen = pygame.display.get_surface()
         self.settings = Settings()
 
-        bg_idx = random.randint(0, 4)
+        bg_imgs = os.listdir('../graphics/backgrounds/')
         self.bg_img = pygame.image.load(
-            f'../graphics/backgrounds/bg{bg_idx}.png')
+            f'../graphics/backgrounds/{random.choice(bg_imgs)}')
         self.bg_img.convert_alpha()
         self.bg_rect = self.bg_img.get_rect()
         self.bg_rect.top = 0
