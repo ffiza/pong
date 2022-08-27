@@ -16,17 +16,3 @@ class GameStats:
 
         # Initialize the game in an inactive state
         self.game_active = False
-
-    # TODO: Maybe this method is not neeeded at all.
-    def reset_stats(self) -> None:
-        """
-        Reset the game stats.
-        """
-        self.scores = [0, 0]
-
-    def draw_scores(self) -> None:
-        """
-        Draw the scores on the screen.
-        """
-
-

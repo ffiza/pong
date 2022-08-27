@@ -108,7 +108,6 @@ class Game:
         self._check_collisions()
         self._check_score()
 
-
         if not self.stats.game_active:
             self._show_start_msg()
 
