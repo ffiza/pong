@@ -101,7 +101,8 @@ class Game:
             debug(str(self.p1.rect.center), y=35)
             debug(str(self.p2.rect.center), y=50)
 
-        self.scoreboard.draw(self.stats.scores)
+        if self.stats.game_active:
+            self.scoreboard.draw(self.stats.scores)
         self.p1.draw_player()
         self.p2.draw_player()
         self.ball.draw_ball()
@@ -115,13 +116,23 @@ class Game:
         """
         Show start message and wait for play input to start game.
         """
-        self.font = pygame.font.Font(self.settings.font_path,
-                                     self.settings.msg_font_size)
+        msg_font = pygame.font.Font(self.settings.msg_font_path,
+                                    self.settings.msg_font_size)
         msg = 'Press SPACE to start the game!'
-        msg_surf = self.font.render(msg, False, 'White')
-        msg_pos = self.screen.get_rect().midtop + self.settings.msg_offset
-        msg_rect = msg_surf.get_rect(midtop=msg_pos)
+        msg_surf = msg_font.render(msg, False, 'White')
+        msg_rect = msg_surf.get_rect()
+        msg_rect.centerx = self.settings.msg_offset[0]
+        msg_rect.centery = self.settings.msg_offset[1]
         self.screen.blit(msg_surf, msg_rect)
+
+        title_font = pygame.font.Font(self.settings.title_font_path,
+                                      self.settings.title_font_size)
+        title = 'Space Pong'
+        title_surf = title_font.render(title, False, 'White')
+        title_rect = title_surf.get_rect()
+        title_rect.centerx = self.settings.title_offset[0]
+        title_rect.centery = self.settings.title_offset[1]
+        self.screen.blit(title_surf, title_rect)
 
         # Check if space is pressed
         keys = pygame.key.get_pressed()
