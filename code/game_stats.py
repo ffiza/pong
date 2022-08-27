@@ -1,6 +1,3 @@
-import pygame
-
-
 class GameStats:
     """
     A class to manage the statistics of the game.
