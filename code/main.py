@@ -97,9 +97,6 @@ class Game:
         """
         if self.settings.debug_mode:
             debug(str(int(self.clock.get_fps())) + ' FPS')
-            debug(str(self.ball.rect.center), y=20)
-            debug(str(self.p1.rect.center), y=35)
-            debug(str(self.p2.rect.center), y=50)
 
         if self.stats.game_active:
             self.scoreboard.draw(self.stats.scores)
@@ -144,10 +141,35 @@ class Game:
         Check if the ball collides with a player and change direction
         accordingly.
         """
-        has_collided = self.ball.rect.colliderect(self.p1.rect) \
-                       or self.ball.rect.colliderect(self.p2.rect)
-        if has_collided:
-            self.ball.direction.x *= -1
+        for player in [self.p1, self.p2]:
+            if self.ball.rect.colliderect(player.rect):
+                col_side = self._get_collision_side(self.ball, player)
+                if col_side in ['left', 'right']:
+                    self.ball.direction.x *= -1
+                if col_side in ['top', 'bottom']:
+                    self.ball.direction.y *= -1
+
+    def _get_collision_side(self, ball, player) -> str:
+        """
+        This method detects on which side of the ball the collision took
+        place.
+
+        :param ball: An instance of the Ball class defined in ball.py
+        :param player: And instance of the Player class defined in player.py
+        :return: A string with the side of the ball that collided.
+        """
+        if abs(player.rect.top - ball.rect.bottom) \
+           < self.settings.col_tolerance and ball.direction.y > 0:
+            return 'bottom'
+        elif abs(player.rect.bottom - ball.rect.top) \
+             < self.settings.col_tolerance and ball.direction.y < 0:
+            return 'top'
+        elif abs(player.rect.right - ball.rect.left) \
+             < self.settings.col_tolerance and ball.direction.x < 0:
+            return 'left'
+        elif abs(player.rect.left - ball.rect.right) \
+             < self.settings.col_tolerance and ball.direction.x > 0:
+            return 'right'
 
     @staticmethod
     def _quit_game() -> None:

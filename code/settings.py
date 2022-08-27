@@ -39,6 +39,9 @@ class Settings:
         self.ball_speed = 2
         self.ball_size = 6
 
+        # Collision settings
+        self.col_tolerance = self.ball_speed + self.player_speed
+
         # Clock settings
         self.fps = 60
 
