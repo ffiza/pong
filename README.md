@@ -6,6 +6,11 @@
     <a href="https://www.python.org/"><img src="https://forthebadge.com/images/badges/made-with-python.svg"></a>
 </p>
 
+<p align="center">
+    <a href="https://github.com/ffiza/pong/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ffiza/pong?style=flat&logo=GNU&labelColor=2B2D2F"></a>
+    <a href="https://www.codefactor.io/repository/github/ffiza/pong"><img src="https://img.shields.io/codefactor/grade/github/ffiza/pong?style=flat&logo=CodeFactor&labelColor=2B2D2F"></a>
+</p>
+
 A space-themed Pong clone in the make. All code is written in Python using 
 PyGame.
 
@@ -43,7 +48,3 @@ by [Deep-Fold](https://deep-fold.itch.io/).
 * Title, start message and score fonts are from
 [the collection of pixel fonts](https://heraldod.itch.io/bitmap-fonts)
 made by [Herald](https://heraldod.itch.io/).
-
-<p align="center">
-    <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode"><img src="https://licensebuttons.net/p/zero/1.0/88x31.png"></a>
-</p>
