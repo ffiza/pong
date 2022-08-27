@@ -9,9 +9,7 @@ class GameStats:
         """
         Constructor for the GameStats class.
         """
-        self.screen = pygame.display.get_surface()
-        self.font = pygame.font.Font(None, 40)
-
+        # Initialize scores for both players
         self.scores = [0, 0]
 
         # Initialize the game in an inactive state
