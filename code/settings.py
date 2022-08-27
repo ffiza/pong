@@ -11,17 +11,23 @@ class Settings:
         Initialize the game's static settings.
         """
         # Screen settings
-        self.screen_width = 480
-        self.screen_height = 234
+        self.screen_width = 640
+        self.screen_height = 350
         self.bg_color = 'black'
         self.window_name = 'Pong'
         self.score_offset = Vector2(100, 25)
 
         # Font settings
-        self.score_font_size = 60
-        self.msg_font_size = 30
-        self.font_path = None
-        self.msg_offset = Vector2(0, 100)
+        self.score_font_size = 40
+        self.msg_font_size = 50
+        self.title_font_size = 80
+        self.title_font_path = '../fonts/Round9x13.ttf'
+        self.msg_font_path = '../fonts/Volt5x5.ttf'
+        self.score_font_path = '../fonts/Scoreboard9x13.ttf'
+        self.msg_offset = Vector2(self.screen_width/2,
+                                  self.screen_height*3/4)
+        self.title_offset = Vector2(self.screen_width/2,
+                                    self.screen_height/6)
 
         # Player settings
         self.player_speed = 4
