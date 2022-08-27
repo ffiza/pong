@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>Pong</h1>
+    <h1>Space Pong</h1>
 </div>
 
 <p align="center">
@@ -10,7 +10,10 @@ A Pong clone made with PyGame.
 
 ## Controls
 
-
+- Press `SPACE` to start the game.
+- The player on the left moves up with `Q` and down with `A`.
+- The player on the right moves up with `ARROWUP` and down with `ARROWDOWN`.
+- You can quit the game at any point with `ESCAPE`.
 
 ## Usage
 
