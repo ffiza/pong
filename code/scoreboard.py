@@ -14,7 +14,8 @@ class Scoreboard:
         self.settings = Settings()
 
         self.screen = pygame.display.get_surface()
-        self.font = pygame.font.Font(None, self.settings.score_font_size)
+        self.font = pygame.font.Font(self.settings.font_path,
+                                     self.settings.score_font_size)
 
     def draw(self, scores: list) -> None:
         """

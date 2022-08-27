@@ -14,6 +14,9 @@ class GameStats:
 
         self.scores = [0, 0]
 
+        # Initialize the game in an inactive state
+        self.game_active = False
+
     # TODO: Maybe this method is not neeeded at all.
     def reset_stats(self) -> None:
         """

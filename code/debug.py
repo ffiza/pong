@@ -2,10 +2,10 @@ import pygame
 
 pygame.init()
 
-font = pygame.font.Font(None, 30)
+font = pygame.font.Font(None, 20)
 
 
-def debug(info: str, x: int = 10, y: int = 10) -> None:
+def debug(info: str, x: int = 5, y: int = 5) -> None:
     """
     Prints custom information on the game screen.
 

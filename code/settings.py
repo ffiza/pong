@@ -16,7 +16,12 @@ class Settings:
         self.bg_color = 'black'
         self.window_name = 'Pong'
         self.score_offset = Vector2(100, 25)
+
+        # Font settings
         self.score_font_size = 60
+        self.msg_font_size = 30
+        self.font_path = None
+        self.msg_offset = Vector2(0, 100)
 
         # Player settings
         self.player_speed = 4
@@ -30,3 +35,6 @@ class Settings:
 
         # Clock settings
         self.fps = 60
+
+        # Other settings
+        self.debug_mode = False
