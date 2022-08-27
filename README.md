@@ -6,7 +6,7 @@
     <a href="https://www.python.org/"><img src="https://forthebadge.com/images/badges/made-with-python.svg"></a>
 </p>
 
-A Pong clone made with PyGame.
+A Pong clone in the make. All code is written in Python using PyGame.
 
 ## Controls
 
