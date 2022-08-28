@@ -35,11 +35,13 @@ class Game:
 
         # Players and ball
         self.p1 = Player(x=self.settings.player_offset,
-                         y=self.screen.get_size()[1]//2)
+                         y=self.screen.get_size()[1]//2,
+                         img_path='../graphics/player1.png')
         self.p2 = Player(x=self.screen.get_size()[0]
                            - self.settings.player_offset
                            - self.settings.player_width,
-                         y=self.screen.get_size()[1]//2)
+                         y=self.screen.get_size()[1]//2,
+                         img_path='../graphics/player2.png')
         self.ball = Ball()
 
     def run(self) -> None:

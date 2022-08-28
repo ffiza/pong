@@ -6,20 +6,23 @@ class Player(pygame.sprite.Sprite):
     """
     A class to manage the player(s).
     """
-    def __init__(self, x: int, y: int):
+    def __init__(self, x: int, y: int, img_path: str):
         """
         Constructor for the Player class.
 
         :param x: The x position of the player at creation.
         :param y: The y position of the player at creation.
+        :param img_path: Path to the graphic for the player.
         """
         super().__init__()
         self.screen = pygame.display.get_surface()
         self.settings = Settings()
 
-        self.rect = pygame.rect.Rect(0, 0,
-                                     self.settings.player_width,
-                                     self.settings.player_height)
+        self.img = pygame.transform.rotate(
+            pygame.image.load(img_path).convert_alpha(),
+            angle=90)
+        self.rect = self.img.get_rect()
+
         self.rect.left = x
         self.rect.centery = y
 
@@ -27,7 +30,9 @@ class Player(pygame.sprite.Sprite):
         """
         Draw the player on the screen.
         """
-        pygame.draw.rect(self.screen, 'white', self.rect)
+        # self.screen.fill(self.settings.bg_color)
+        self.screen.blit(self.img, self.rect)
+        # pygame.draw.rect(self.screen, 'white', self.rect)
 
     def move_up(self) -> None:
         """
