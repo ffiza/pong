@@ -41,7 +41,7 @@ python code/main.py
 ## Screenshots
 
 <p align="center">
-    ![Screenshot](https://raw.github.com/ffiza/pong/graphics/screenshots/screenshot1.png?raw=true)
+    ![Screenshot](https://raw.github.com/ffiza/pong/graphics/screenshots/screenshot1.png)
 </p>
 
 <p align="center">
