@@ -41,7 +41,7 @@ python code/main.py
 ## Screenshots
 
 <p align="center">
-    ![screenshot1](https://user-images.githubusercontent.com/72767241/187099315-a89f4865-92b4-44f9-bbae-75ec47d9a116.png)
+    ![screenshot1](https://user-images.githubusercontent.com/72767241/187099315-a89f4865-92b4-44f9-bbae-75ec47d9a116.png?raw=true)
 </p>
 
 <p align="center">
