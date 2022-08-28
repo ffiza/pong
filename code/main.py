@@ -94,13 +94,27 @@ class Game:
         """
         self.background.blit_bg()
 
+    @staticmethod
+    def _display_debug(str_list: list[str]) -> None:
+        """
+        Display a given list of strings on the screen.
+
+        :param str_list: A list of strings to display on screen.
+        """
+        y = 5
+        for str_el in str_list:
+            debug(str_el, y=y)
+            y += 15
+
     def _update_screen(self) -> None:
         """
         Update elements on the screen and flip to the new screen.
         """
         if self.settings.debug_mode:
-            debug(str(int(self.clock.get_fps())) + ' FPS')
-            debug(str(self.ball.speed), y=20)
+            str_list = [str(int(self.clock.get_fps())) + ' FPS',
+                        str(self.ball.speed),
+                        str(self.ball.rect.center)]
+            self._display_debug(str_list)
 
         if self.stats.game_active:
             self.scoreboard.draw(self.stats.scores)
