@@ -40,7 +40,10 @@ python code/main.py
 
 ## Screenshots
 
- [Screenshot](https://github.com/ffiza/pong/blob/main/graphics/screenshots/screenshot1.png)
+<p align="center">
+    <img src="https://imgur.com/a/3iBouGw">
+</p>
+
 
 ## Attributions
 
