@@ -41,9 +41,12 @@ python code/main.py
 ## Screenshots
 
 <p align="center">
-    <img src="https://imgur.com/a/3iBouGw">
+    <img src="https://i.imgur.com/8PBkT8h.png">
 </p>
 
+<p align="center">
+    <img src="https://i.imgur.com/Axiwvm3.png">
+</p>
 
 ## Attributions
 
