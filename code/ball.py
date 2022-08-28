@@ -48,9 +48,13 @@ class Ball(pygame.sprite.Sprite):
         """
         Check is the ball collides with the screen borders and change direction.
         """
-        has_collided = self.rect.bottom >= self.screen.get_rect().bottom \
-                       or self.rect.top <= self.screen.get_rect().top
-        if has_collided:
+        has_collided_top = (self.rect.top <= self.screen.get_rect().top) \
+                           and (self.direction.y == -1)
+        has_collided_bottom = (self.rect.bottom
+                               >= self.screen.get_rect().bottom) \
+                              and (self.direction.y == 1)
+
+        if has_collided_top or has_collided_bottom:
             self.direction.y *= -1
 
     def increase_speed(self, factor: float) -> None:

@@ -100,6 +100,7 @@ class Game:
         """
         if self.settings.debug_mode:
             debug(str(int(self.clock.get_fps())) + ' FPS')
+            debug(str(self.ball.speed), y=20)
 
         if self.stats.game_active:
             self.scoreboard.draw(self.stats.scores)
