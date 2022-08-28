@@ -84,6 +84,7 @@ class Game:
             self.ball.reset()
             self.ball.increase_speed(self.settings.ball_speed_increase_fact)
         if self.ball.rect.left <= self.screen.get_rect().left:
+            # Score for player 2
             self.stats.scores[1] += 1
             self.ball.reset()
             self.ball.increase_speed(self.settings.ball_speed_increase_fact)
