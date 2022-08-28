@@ -38,6 +38,16 @@ Run the game:
 python code/main.py
 ```
 
+## Screenshots
+
+<p align="center">
+    <img src="https://github.com/ffiza/pong/blob/main/graphics/screenshots/screensho1.png">
+</p>
+
+<p align="center">
+    <img src="https://github.com/ffiza/pong/blob/main/graphics/screenshots/screensho2.png">
+</p>
+
 ## Attributions
 
 * This project is published under the Creative Commons Zero
