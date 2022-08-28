@@ -40,9 +40,7 @@ python code/main.py
 
 ## Screenshots
 
-<p align="center">
-    ![Screenshot](https://raw.github.com/ffiza/pong/blob/main/graphics/screenshots/screenshot1.png)
-</p>
+![Screenshot](https://raw.github.com/ffiza/pong/blob/main/graphics/screenshots/screenshot1.png)
 
 <p align="center">
     <img src="https://github.com/ffiza/pong/blob/main/graphics/screenshots/screensho2.png">
