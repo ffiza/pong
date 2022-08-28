@@ -75,15 +75,18 @@ class Game:
 
     def _check_score(self) -> None:
         """
-        Check if the ball leaves the screen and update score.
+        Check if the ball leaves the screen and update score and increase
+        the speed of the ball.
         """
         if self.ball.rect.right >= self.screen.get_rect().right:
             # Score for player 1
             self.stats.scores[0] += 1
             self.ball.reset()
+            self.ball.increase_speed(self.settings.ball_speed_increase_fact)
         if self.ball.rect.left <= self.screen.get_rect().left:
             self.stats.scores[1] += 1
             self.ball.reset()
+            self.ball.increase_speed(self.settings.ball_speed_increase_fact)
 
     def _draw_background(self) -> None:
         """

@@ -52,3 +52,12 @@ class Ball(pygame.sprite.Sprite):
                        or self.rect.top <= self.screen.get_rect().top
         if has_collided:
             self.direction.y *= -1
+
+    def increase_speed(self, factor: float) -> None:
+        """
+        This method increases the ball of the speed by a given factor.
+
+        :param factor: The multiplicative factor the speed is multiplied by
+                       each time this method is called.
+        """
+        self.speed *= factor
