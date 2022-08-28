@@ -48,3 +48,5 @@ by [Deep-Fold](https://deep-fold.itch.io/).
 * Title, start message and score fonts are from
 [the collection of pixel fonts](https://heraldod.itch.io/bitmap-fonts)
 made by [Herald](https://heraldod.itch.io/).
+* All other graphics included in this project were drawn by the author and
+published under the CC0 license.
