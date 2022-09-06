@@ -17,11 +17,12 @@ class Ball(pygame.sprite.Sprite):
         self.settings = Settings()
 
         # Ball setup
-        self.rect = pygame.rect.Rect(0, 0,
-                                     self.settings.ball_size,
-                                     self.settings.ball_size)
+        self.img = pygame.image.load('../graphics/ball.png').convert_alpha()
+        self.rect = self.img.get_rect()
+
         self.rect.center = self.screen.get_rect().center
         self.speed = self.settings.ball_speed
+
         # Use a random initial direction
         self.direction = pygame.math.Vector2(random.choices([1, -1], k=2))
 
@@ -29,7 +30,7 @@ class Ball(pygame.sprite.Sprite):
         """
         Draw the ball on screen.
         """
-        pygame.draw.rect(self.screen, 'white', self.rect)
+        self.screen.blit(self.img, self.rect)
 
     def move_ball(self) -> None:
         """

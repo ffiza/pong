@@ -37,7 +37,7 @@ class Settings:
 
         # Ball settings
         self.ball_speed = 2
-        self.ball_size = 6
+        # self.ball_size = 6
         self.ball_speed_increase_fact = 1.1
 
         # Collision settings
