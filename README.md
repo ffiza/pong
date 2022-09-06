@@ -11,7 +11,7 @@
     <a href="https://www.codefactor.io/repository/github/ffiza/pong"><img src="https://img.shields.io/codefactor/grade/github/ffiza/pong?style=flat&logo=CodeFactor&labelColor=2B2D2F"></a>
 </p>
 
-A space-themed Pong clone in the make. All code is written in Python using 
+A space-themed Pong clone. All code is written in Python using 
 PyGame.
 
 ## Controls
