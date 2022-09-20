@@ -25,7 +25,7 @@ PyGame.
 
 To run the game, first clone the repository: 
 ```bash
-https://github.com/ffiza/pong.git
+git clone https://github.com/ffiza/pong.git
 ```
 
 Go to the project directory and install depedencies:
